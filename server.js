@@ -3,8 +3,7 @@ import express from 'express';
 const app = express();
 
 app.get('/', (request, response) => {
-    response.type (<h1>Server del mio blog</h1>   
-)
+    response.json('Server del mio blog')
 
 
 });
@@ -23,8 +22,12 @@ app.get('/bacheca', (request, response) => {
 
 
 
-app.listen(3000, () => {
-    console.log('Server in ascolto sulla porta 3000');
+app.listen(3000, (error) => {
+    if (error){
+        console.error(error);
+    } else 
+        console.log('Server in ascolto sulla porta 3000');
+    
 });
 
 
